@@ -84,7 +84,7 @@ class ReviewFileAdderPlugin extends GenericPlugin
 
 
 
-        return true;
+        return false;
 
 
     }
