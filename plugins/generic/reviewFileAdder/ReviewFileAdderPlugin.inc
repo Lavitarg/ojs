@@ -18,9 +18,18 @@ class ReviewFileAdderPlugin extends GenericPlugin
     }
 
     function addFileCallback($hookName, $args){
+        error_log("Hook catched! Length: " . (count($args)));
         foreach ($args as $k) {
-            error_log($k);
+            error_log((strval($k))."---".(gettype($args[0])));
         }
+        $myRequest = Application::get()->getRequest();
+        error_log(strval($myRequest));
+        error_log((strval($myRequest->getUserVar($args[0])).(gettype($myRequest->getUserVar($args[0])))));
+
+
+        return false;
+
+
     }
 
     function getDisplayName()
