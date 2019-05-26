@@ -22,10 +22,16 @@ class ReviewFileAdderPlugin extends GenericPlugin
         foreach ($args as $s) {
             error_log(gettype($s));
         }
-        $myRequest = Application::get()->getRequest();
-        error_log(gettype($myRequest->getUserVar($args[0])));
-        error_log((strval($myRequest->getUserVar($args[0]))));
-        error_log($myRequest->getUserVar($args[0]));
+        error_log(get_class($args[0]));
+        try{
+            $MyStep3Form = $args[0];
+
+        }catch (Exception $e){
+            error_log($e->getMessage());
+        }
+//        error_log(gettype($myRequest->getUserVar($args[0])));
+//        error_log((strval($myRequest->getUserVar($args[0]))));
+//        error_log($myRequest->getUserVar($args[0]));
 
 
 
