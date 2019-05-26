@@ -19,8 +19,8 @@ class ReviewFileAdderPlugin extends GenericPlugin
 
     function addFileCallback($hookName, $args){
         error_log("Hook catched! Length: " . (count($args)));
-        foreach ($args as $k) {
-            error_log(gettype($args[k]));
+        foreach ($args as $s) {
+            error_log(strval(gettype($args[$s])));
         }
         $myRequest = Application::get()->getRequest();
         error_log(strval($myRequest));
